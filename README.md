@@ -3,8 +3,8 @@ Are you absolutely tired of inefficient programs stealing all of your ram? I kno
 
 ```
 INTERVAL, - seconds of delay
-FREE\_RAM\_THRESHOLD, - the amount of free ram you have to have left for it to run
-NO\_MERCY, -if this is set to 1, it will kill the preoccess instead of terminate. Useful if the situation is dire
+FREE_RAM_THRESHOLD, - the amount of free ram you have to have left for it to run
+NO_MERCY, -if this is set to 1, it will kill the preoccess instead of terminate. Useful if the situation is dire
 
 and
 
@@ -13,8 +13,8 @@ the "offenders" string array
 
 ## Instructions
 ```
-git clone {this repository url}
-cd {this repository url, I dont wanna edit this file after this one and only push}
+git clone https://github.com/zeroxthreef/Quit-Stealing-Ram.git
+cd Quit-Stealing-Ram
 mkdir build && cd build && cmake ..
 make
 sudo make install
