@@ -8,9 +8,9 @@
 /* libprocps-dev */
 #include <proc/readproc.h>
 
-#define INTERVAL 2
+#define INTERVAL 2 /* number of seconds in delay. Tune this to your liking */
 #define FREE_RAM_THRESHOLD 1024 * 1024 * 300 /* 300mb */
-#define NO_MERCY 1
+#define NO_MERCY 1 /* some proccesses take time/give a warning when being SIGTERM'ed. This removes that delay with a few drawbacks */
 
 /* a list of process names that are the usual OOM offender. Customize this to your liking */
 
@@ -18,7 +18,8 @@ char *offenders[] = { /* this list will kill any process with any one of the str
 	"firefox",
 	"Web Content",
 	"spotify",
-	"Discord"
+	"Discord",
+	"chromium"
 };
 
 
@@ -48,7 +49,7 @@ int main(int argc, char ** argv)
 		
 		if(status.freeram <= FREE_RAM_THRESHOLD) /* if the amount of free ram is too low */
 		{
-			fprintf("unacceptable ram usage limit reached at %lu\n", status.freeram);
+			fprintf(stderr, "unacceptable ram usage limit reached at %lu\n", status.freeram);
 			
 			memset(&proccess, 0, sizeof(proccess));
 			
