@@ -9,7 +9,7 @@
 #include <proc/readproc.h>
 
 #define INTERVAL 2
-#define FREE_RAM_THRESHOLD 1024 * 1024 * 500 /* 500mb */
+#define FREE_RAM_THRESHOLD 1024 * 1024 * 300 /* 300mb */
 #define NO_MERCY 1
 
 /* a list of process names that are the usual OOM offender. Customize this to your liking */
@@ -48,6 +48,8 @@ int main(int argc, char ** argv)
 		
 		if(status.freeram <= FREE_RAM_THRESHOLD) /* if the amount of free ram is too low */
 		{
+			fprintf("unacceptable ram usage limit reached at %lu\n", status.freeram);
+			
 			memset(&proccess, 0, sizeof(proccess));
 			
 			if(!(proc = openproc(PROC_FILLMEM | PROC_FILLSTAT | PROC_FILLSTATUS | PROC_FILLUSR)))
