@@ -22,5 +22,8 @@ sudo make install
 ## Dependencies
 * libprocps-dev
 
+## Contributors
+* modeco80
+
 ## License
 * GPL (no choice, libprocps is GPL)
