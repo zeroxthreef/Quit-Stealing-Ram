@@ -7,7 +7,7 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-ExecStart=/usr/local/bin/QSR
+ExecStart=/usr/local/bin/qsr
 
 [Install]
 WantedBy=multi-user.target
